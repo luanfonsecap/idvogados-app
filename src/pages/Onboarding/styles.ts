@@ -17,7 +17,7 @@ export const Page = styled.View`
 `
 
 export const Hero = styled.Image`
-  height: 300;
+  height: 300px;
 `
 
 export const Title = styled.Text`
