@@ -7,6 +7,7 @@ import SignUp from '../pages/SignUp'
 import SelectCity from '../pages/SelectCity'
 import Unavailable from '../pages/Unavailable'
 import ShareApp from '../pages/ShareApp'
+import ForgotPassword from '../pages/ForgotPassword'
 import colors from '../styles/colors'
 
 const Auth = createStackNavigator()
@@ -24,6 +25,7 @@ const AuthRoutes: React.FC = () => (
     <Auth.Screen name="SelectCity" component={SelectCity} />
     <Auth.Screen name="Unavailable" component={Unavailable} />
     <Auth.Screen name="ShareApp" component={ShareApp} />
+    <Auth.Screen name="ForgotPassword" component={ForgotPassword} />
   </Auth.Navigator>
 )
 
