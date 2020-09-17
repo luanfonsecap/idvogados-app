@@ -24,6 +24,7 @@ export const Container = styled(TouchableOpacity)<ContainerProps>`
 
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   ${props =>
     props.outline &&
     css`
@@ -41,4 +42,5 @@ export const ButtonText = styled.Text<ButtonTextProps>`
       ? colors.primary
       : colors.light};
   font-size: 18px;
+  margin-right: 10px;
 `
