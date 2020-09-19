@@ -42,7 +42,7 @@ const ValidateToken: React.FC = () => {
         return
       }
 
-      navigation.navigate('RecoverPassword')
+      navigation.navigate('RecoverPassword', { token })
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err)
