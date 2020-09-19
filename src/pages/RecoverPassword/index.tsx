@@ -43,7 +43,7 @@ const RecoverPassword: React.FC = () => {
       formRef.current?.setErrors({})
       const schema = Yup.object().shape({
         password: Yup.string()
-          .required('Código é obrigatório')
+          .required('Nova senha é obrigatório')
           .matches(
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/gm,
             'A senha deve ter no mínimo 8 caracteres, 1 letra maiúscula, 1 letra minúscula e 1 caractere especial'
