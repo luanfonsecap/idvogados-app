@@ -9,6 +9,7 @@ import Unavailable from '../pages/Unavailable'
 import ShareApp from '../pages/ShareApp'
 import ForgotPassword from '../pages/ForgotPassword'
 import ValidateToken from '../pages/ValidateToken'
+import RecoverPassword from '../pages/RecoverPassword'
 import colors from '../styles/colors'
 
 const Auth = createStackNavigator()
@@ -28,6 +29,7 @@ const AuthRoutes: React.FC = () => (
     <Auth.Screen name="ShareApp" component={ShareApp} />
     <Auth.Screen name="ForgotPassword" component={ForgotPassword} />
     <Auth.Screen name="ValidateToken" component={ValidateToken} />
+    <Auth.Screen name="RecoverPassword" component={RecoverPassword} />
   </Auth.Navigator>
 )
 
