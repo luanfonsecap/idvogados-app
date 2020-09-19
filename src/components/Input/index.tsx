@@ -10,10 +10,14 @@ import { TextInputProps } from 'react-native'
 import { useField } from '@unform/core'
 import { Container, TextInput, Icon, Caption } from './styles'
 import colors from '../../styles/colors'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 interface InputProps extends TextInputProps {
   name: string
-  icon?: string
+  iconRight?: string
+  onPressRightIcon?: () => void
+  iconLeft?: string
+  onPressLeftIcon?: () => void
   caption?: string
 }
 
@@ -26,7 +30,15 @@ interface InputRef {
 }
 
 const Input: React.RefForwardingComponent<InputRef, InputProps> = (
-  { name, icon, caption, ...rest },
+  {
+    name,
+    iconRight,
+    onPressRightIcon,
+    iconLeft,
+    onPressLeftIcon,
+    caption,
+    ...rest
+  },
   ref
 ) => {
   const [isFocused, setIsFocused] = useState(false)
@@ -73,12 +85,14 @@ const Input: React.RefForwardingComponent<InputRef, InputProps> = (
   return (
     <>
       <Container isFocused={isFocused} isErrored={!!error}>
-        {icon ? (
-          <Icon
-            name={icon}
-            size={20}
-            color={isFocused ? colors.primary : colors.medium}
-          />
+        {iconLeft ? (
+          <TouchableOpacity onPress={onPressLeftIcon}>
+            <Icon
+              name={iconLeft}
+              size={20}
+              color={isFocused ? colors.primary : colors.medium}
+            />
+          </TouchableOpacity>
         ) : null}
         <TextInput
           ref={inputElementRef}
@@ -92,6 +106,15 @@ const Input: React.RefForwardingComponent<InputRef, InputProps> = (
           }}
           {...rest}
         />
+        {iconRight ? (
+          <TouchableOpacity onPress={onPressRightIcon}>
+            <Icon
+              name={iconRight}
+              size={20}
+              color={isFocused ? colors.primary : colors.medium}
+            />
+          </TouchableOpacity>
+        ) : null}
       </Container>
       {caption ? <Caption>{caption}</Caption> : null}
     </>
